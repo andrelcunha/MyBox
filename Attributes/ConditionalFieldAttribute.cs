@@ -1,16 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-[AttributeUsage(AttributeTargets.Field)]
-public class ConditionalFieldAttribute : PropertyAttribute
+namespace Deadcows
 {
-	public string PropertyToCheck;
-
-	public object CompareValue;
-	 
-	public ConditionalFieldAttribute(string propertyToCheck, object compareValue = null)
+	[AttributeUsage(AttributeTargets.Field)]
+	public class ConditionalFieldAttribute : PropertyAttribute
 	{
-		PropertyToCheck = propertyToCheck;
-		CompareValue = compareValue;
+		public string PropertyToCheck;
+
+		public object CompareValue;
+		
+		public ConditionalFieldAttribute(string propertyToCheck, object compareValue = null)
+		{
+			PropertyToCheck = propertyToCheck;
+			CompareValue = compareValue;
+		}
 	}
 }
